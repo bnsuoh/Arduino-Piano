@@ -40,7 +40,7 @@ void draw()
     prev=2;
   }
   if(val==3&&prev!=3){                      
-    fill(21x0);                 
+    fill(210);                 
     b3.rewind();
     b3.play();
     prev=3;
