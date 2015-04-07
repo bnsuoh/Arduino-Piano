@@ -44,7 +44,7 @@ void setup() {
   keys[33]=minim.loadFile("a4.wav");
   keys[34]=minim.loadFile("a#4.wav");
   keys[35]=minim.loadFile("b4.wav");
-  serialCon = new Serial(this, "/dev/tty.usbmodem1421", 9600);
+  serialCon = new Serial(this, "/dev/tty.usbmodem1421", 28800);
 }
 
 void draw(){
@@ -58,6 +58,7 @@ void draw(){
     prev=0;    
   }
   else if(prev!=val){
+    fill(random(250));
     keys[val].rewind();
     keys[val].play();
     prev=val;

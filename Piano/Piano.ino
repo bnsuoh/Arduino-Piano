@@ -12,14 +12,17 @@ void setup(){
 
 void loop(){
   for (int i=0; i<16; i++){ //Digital read every 16 input on IO1, IO2, and IO3
-    if(muxShield.analogReadMS(1,i)>800){ //And print out a definitive number if they are HIGH
+    if(i<5 && muxShield.analogReadMS(1,i)>800){ //And print out a definitive number if they are HIGH
       Serial.write(i); //every key has a corresponding int value
     }
-    if(muxShield.analogReadMS(2,i)>800){
-      Serial.write(i+17);
+    if(i>11 && muxShield.analogReadMS(1,i)>800){ //And print out a definitive number if they are HIGH
+      Serial.write(i-7); //every key has a corresponding int value
     }
-    if(muxShield.analogReadMS(3,i)>800){
-      Serial.write(i+34);
+    if(i<5 && muxShield.analogReadMS(2,i)>800){
+      Serial.write(i+9);
+    }
+    if(i>7 && muxShield.analogReadMS(3,i)>800){
+      Serial.write(i+20);
     }
   }
   delay(100);
