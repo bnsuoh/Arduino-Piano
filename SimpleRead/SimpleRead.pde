@@ -53,37 +53,16 @@ void setup() {
 
 void draw(){
   val=0;
-  if ( serialCon.available() > 0) { 
-    val = serialCon.read();         
-    delay(10);
+  if (serialCon.available()>0) { 
+    val = serialCon.read();
   }
   background(255);             
-  if (val == 0) {
-    prev=0;    
-  }
-  else if(prev!=val){
-    fill(random(250));
-    keys[val-1].rewind();
-    keys[val-1].play();
-    prev=val;
-  }
-  /*if(val==1&&prev!=1){                      
-    fill(204);                
-    d3.rewind();
-    d3.play();
+  if (val == 1) {
     prev=1;
   }
-  if(val==2&&prev!=2){                      
-    fill(150);                 
-    c3.rewind();
-    c3.play();
-    prev=2;
+  if(prev==1 && val>1){
+    keys[val-2].rewind();
+    keys[val-2].play();
+    prev=val;
   }
-  if(val==3&&prev!=3){                      
-    fill(210);                 
-    b3.rewind();
-    b3.play();
-    prev=3;
-  }*/
-  rect(50, 50, 100, 100);
 }
