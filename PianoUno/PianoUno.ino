@@ -4,7 +4,7 @@
 ---------------  */
 int prev;
 void setup(){
-  for (int i=2;i<37;i++){
+  for (int i=2;i<35;i++){
     pinMode(i,INPUT_PULLUP);
   }
   Serial.begin(9600);
@@ -12,17 +12,17 @@ void setup(){
 
 void loop(){
   boolean clicked=false;
-  for (int i=2;i<37;i++){
+  for (int i=2;i<35;i++){
     int pin= digitalRead(i);
     if(pin==0){
       Serial.write(i);
       clicked=true;
-      delay(25);
+      delay(10);
     }
   }
   if (clicked==false){
     Serial.write(1);
-    delay(25);
+    delay(10);
   }
 }
 
