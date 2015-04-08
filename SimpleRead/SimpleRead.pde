@@ -55,7 +55,7 @@ void draw(){
   val=0;
   if ( serialCon.available() > 0) { 
     val = serialCon.read();         
-    delay(100);
+    delay(10);
   }
   background(255);             
   if (val == 0) {
@@ -63,8 +63,8 @@ void draw(){
   }
   else if(prev!=val){
     fill(random(250));
-    keys[val].rewind();
-    keys[val].play();
+    keys[val-1].rewind();
+    keys[val-1].play();
     prev=val;
   }
   /*if(val==1&&prev!=1){                      
