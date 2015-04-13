@@ -17,12 +17,12 @@ void loop(){
     if(pin==0){
       Serial.write(i);
       clicked=true;
-      delay(10);
+      delay(40);
     }
   }
   if (clicked==false){
     Serial.write(1);
-    delay(10);
+    delay(40);
   }
 }
 
